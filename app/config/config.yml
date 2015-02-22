@@ -5,7 +5,7 @@ imports:
 
 framework:
     #esi:             ~
-    #translator:      { fallbacks: ["%locale%"] }
+    translator:      { fallbacks: ["%locale%"] }
     secret:          "%secret%"
     router:
         resource: "%kernel.root_dir%/config/routing.yml"
@@ -71,3 +71,28 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+
+# FOS User Bundle Configuration
+fos_user:
+    db_driver: orm
+    firewall_name: main
+    user_class: Gingy\UserBundle\Entity\User
+    registration:
+        form:
+            type: gingy_user_registration
+            validation_groups: [ RegistrationGingy, Default ]
+        confirmation:
+            enabled:    true
+    from_email:
+        address:        admin@gingerbreadman-sightings.org
+        sender_name:    Gingerbread Man Administrators
+    profile:
+        form:
+            type: gingy_user_profile
+            validation_groups: [ ProfileGingy, Default ]
+    change_password:
+        form:
+            type: fos_user_change_password
+            validation_groups: [ ChangePasswordGingy, Default ]
+    service:
+        mailer: fos_user.mailer.twig_swift

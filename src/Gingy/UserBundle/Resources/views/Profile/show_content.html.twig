@@ -1,0 +1,25 @@
+<div class="fos_user_user_show">
+    <table class="table table-striped">
+        <caption>{{ 'profile.show.personal'|trans({}, 'FOSUserBundle') }}</caption>
+        <tbody>
+        <tr>
+            <th width="40%" scope="row">{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}</th>
+            <td>{{ user.username }}</td>
+        </tr>
+        <tr>
+            <th scope="row">{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}</th>
+            <td>{{ user.email }}</td>
+        </tr>
+        <tr>
+            <th scope="row">{{ 'profile.show.birthday'|trans({}, 'FOSUserBundle') }}</th>
+            <td>{{ user.birthday | date('d-m-Y') }}</td>
+        </tr>
+        <tr>
+            <th scope="row">{{ 'profile.show.timezone'|trans({}, 'FOSUserBundle') }}</th>
+            <td>{{ user.timezone }}</td>
+        </tr>
+        </tbody>
+    </table>
+    <a href="{{ path('fos_user_profile_edit') }}" class="btn btn-primary" role="button">{{ 'profile.show.edit'|trans({}, 'FOSUserBundle') }}</a>
+    <a href="{{ path('fos_user_change_password') }}" class="btn btn-primary" role="button">{{ 'profile.show.password'|trans({}, 'FOSUserBundle') }}</a>
+</div>
