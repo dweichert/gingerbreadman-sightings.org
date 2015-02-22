@@ -16,6 +16,24 @@
         <![endif]-->
     </head>
     <body>
+        {% block navigation %}
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-navigation">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+                <div id="main-navigation" class="collapse navbar-collapse">
+                    {{ knp_menu_render('GingyMenuBundle:Builder:mainMenu', {'currentAsLink': true, 'currentClass': 'active'}) }}
+                    {{ knp_menu_render('GingyMenuBundle:Builder:rightMenu', {'currentAsLink': true, 'currentClass': 'active', 'template': 'GingyMenuBundle:Menu:knp_menu.html.twig'}) }}
+                </div>
+            </div>
+        </nav>
+        {% endblock navigation %}
         <div class="container">
         {% block body %}
         {% endblock %}

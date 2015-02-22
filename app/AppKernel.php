@@ -19,6 +19,8 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Gingy\UserBundle\GingyUserBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
+            new Gingy\MenuBundle\GingyMenuBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
