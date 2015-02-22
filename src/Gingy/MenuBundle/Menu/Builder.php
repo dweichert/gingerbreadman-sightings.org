@@ -51,7 +51,7 @@ class Builder extends ContainerAware
         {
             $userMenuItem = $menu
                 ->addChild('CurrentUser', array(
-                    'label' => $user->getFirstname() . ' ' . $user->getSurname(),
+                    'label' => $user->getUsername(),
                 ))
                 ->setAttribute('dropdown', true)
                 ->setAttribute('icon', 'fa fa-user');
