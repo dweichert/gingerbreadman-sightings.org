@@ -1,8 +1,8 @@
 {
-    "name": "symfony/framework-standard-edition",
+    "name": "gingerbreadman-sightings.org",
     "license": "MIT",
     "type": "project",
-    "description": "The \"Symfony Standard Edition\" distribution",
+    "description": "This application is based on the Symfony Standard Edition and powers the website gingerbreadman-sightings.org. It helps educators and children with projects about the Gingerbread Man fairy tale, aiming to build a community to share stories, adventures and teaching aids.",
     "autoload": {
         "psr-0": { "": "src/", "SymfonyStandard": "app/" }
     },
