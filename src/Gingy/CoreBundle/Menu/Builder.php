@@ -8,7 +8,7 @@
  * file that was distributed with this source code.
  */
 
-namespace Gingy\MenuBundle\Menu;
+namespace Gingy\CoreBundle\Menu;
 
 use Knp\Menu\FactoryInterface;
 use Symfony\Component\DependencyInjection\ContainerAware;

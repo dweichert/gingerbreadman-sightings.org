@@ -8,10 +8,10 @@
  * file that was distributed with this source code.
  */
 
-namespace Gingy\MenuBundle;
+namespace Gingy\CoreBundle;
 
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class GingyMenuBundle extends Bundle
+class GingyCoreBundle extends Bundle
 {
 }

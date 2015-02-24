@@ -20,7 +20,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Gingy\UserBundle\GingyUserBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
-            new Gingy\MenuBundle\GingyMenuBundle(),
+            new Gingy\CoreBundle\GingyCoreBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
