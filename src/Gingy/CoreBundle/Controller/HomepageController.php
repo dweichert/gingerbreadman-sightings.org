@@ -21,4 +21,10 @@ class HomepageController extends Controller
         $view = $request->getLocale() == 'de' ? 'GingyCoreBundle:Homepage:index.de.html.twig' : 'GingyCoreBundle:Homepage:index.en.html.twig';
         return $this->render($view);
     }
+
+    public function imprintAction(Request $request)
+    {
+        $view = $request->getLocale() == 'de' ? 'GingyCoreBundle:Homepage:imprint.de.html.twig' : 'GingyCoreBundle:Homepage:imprint.en.html.twig';
+        return $this->render($view);
+    }
 }

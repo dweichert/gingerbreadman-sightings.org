@@ -3,3 +3,9 @@ homepage:
     defaults: { _controller: GingyCoreBundle:Homepage:index }
     requirements:
         _locale: en|de
+
+imprint:
+    path:     /{_locale}/imprint
+    defaults: { _controller: GingyCoreBundle:Homepage:imprint }
+    requirements:
+        _locale: en|de

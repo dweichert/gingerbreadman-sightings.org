@@ -31,8 +31,6 @@ class Builder extends ContainerAware
         $request = $this->container->get('request');
         $menu = $factory->createItem('root', array('childrenAttributes' => array('class' => 'nav navbar-nav bs-navbar-collapse')));
         $menu->addChild('Home', array('route' => 'homepage', 'label' => $this->_getLabel($request, 'Home')));
-        $menu->addChild('Contact', array('route' => 'homepage', 'label' => $this->_getLabel($request, 'Contact')));
-        $menu->addChild('Privacy Policy', array('route' => 'homepage', 'label' => $this->_getLabel($request, 'Privacy Policy')));
         return $menu;
     }
 
