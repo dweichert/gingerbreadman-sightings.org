@@ -1,7 +1,7 @@
+gingy_core:
+    resource: "@GingyCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+
 gingy_user:
     resource: "@GingyUserBundle/Resources/config/routing.yml"
     prefix:   /
-
-app:
-    resource: @AppBundle/Controller/
-    type:     annotation
