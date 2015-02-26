@@ -52,7 +52,7 @@ class User extends BaseUser
     /**
      * @var string
      *
-     * @ORM\Column(name="timezone", type="string", length=50)
+     * @ORM\Column(name="timezone", type="string", length=50, nullable=true)
      */
     private $timezone;
 

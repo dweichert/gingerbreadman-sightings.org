@@ -61,6 +61,8 @@ class ProfileFormType extends BaseType
                     'translation_domain' => 'FOSUserBundle',
                     'input' => 'datetime',
                     'format' => 'ddMMMyyyy',
+                    'placeholder' => array('year' => 'Year', 'month' => 'Month', 'day' => 'Day'),
+                    'required' => false,
                     'widget' => 'choice'
                 )
             )
@@ -70,6 +72,10 @@ class ProfileFormType extends BaseType
                 array(
                     'label' => 'form.timezone',
                     'translation_domain' => 'FOSUserBundle',
+                    'preferred_choices' => array('Europe/Berlin','Europe/London','America/New_York','America/Chicago','America/Denver','America/Los_Angeles','Australia/Sidney','Pacific/Auckland','UTC'),
+                    'required'    => false,
+                    'placeholder' => 'form.timezone_placeholder',
+                    'empty_data'  => ''
                 )
             )
         ;

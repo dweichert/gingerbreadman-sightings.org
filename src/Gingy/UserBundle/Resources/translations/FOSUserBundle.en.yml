@@ -116,6 +116,7 @@ form:
     username: "Username:"
     birthday: "Birthday:"
     timezone: "Time Zone:"
+    timezone_placeholder: "Please choose a time zone"
     promptchoice: "Please choose an option"
     email: "Email:"
     current_password: "Current password:"
