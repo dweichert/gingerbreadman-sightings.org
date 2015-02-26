@@ -60,6 +60,7 @@ class ProfileFormType extends BaseType
                     'label' => 'form.birthday',
                     'translation_domain' => 'FOSUserBundle',
                     'input' => 'datetime',
+                    'format' => 'ddMMMyyyy',
                     'widget' => 'choice'
                 )
             )

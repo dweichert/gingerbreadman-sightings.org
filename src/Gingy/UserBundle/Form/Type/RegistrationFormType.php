@@ -34,7 +34,8 @@ class RegistrationFormType extends BaseType
                     'label' => 'form.birthday',
                     'translation_domain' => 'FOSUserBundle',
                     'input' => 'datetime',
-                    'widget' => 'choice',
+                    'format' => 'ddMMMyyyy',
+                    'widget' => 'choice'
                 )
             )
             ->add(
