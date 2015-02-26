@@ -12,6 +12,7 @@ namespace Gingy\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use FOS\UserBundle\Entity\User as BaseUser;
+use Knp\DoctrineBehaviors\Model as ORMBehaviors;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
@@ -25,6 +26,8 @@ use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
  */
 class User extends BaseUser
 {
+    use ORMBehaviors\Timestampable\Timestampable;
+
     public function __construct()
     {
         parent::__construct();
@@ -42,9 +45,9 @@ class User extends BaseUser
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="birthday", type="datetimetz")
+     * @ORM\Column(name="birthday", type="datetime", nullable=true)
      */
-    private $birthday;
+    private $birthday = null;
 
     /**
      * @var string
