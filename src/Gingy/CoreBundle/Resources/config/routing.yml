@@ -9,3 +9,9 @@ imprint:
     defaults: { _controller: GingyCoreBundle:Homepage:imprint }
     requirements:
         _locale: en|de
+
+organisation_add:
+    path:     /{_locale}/organisation/add
+    defaults: { _controller: GingyCoreBundle:Organisation:add }
+    requirements:
+        _locale: en|de
