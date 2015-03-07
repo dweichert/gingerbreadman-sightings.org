@@ -4,6 +4,9 @@ imports:
     - { resource: services.yml }
     - { resource: ../../vendor/knplabs/doctrine-behaviors/config/orm-services.yml }
 
+parameters:
+    knp.doctrine_behaviors.blameable_subscriber.user_entity: Gingy\UserBundle\Entity\User
+
 framework:
     #esi:             ~
     translator:      { fallbacks: ["%locale%"] }

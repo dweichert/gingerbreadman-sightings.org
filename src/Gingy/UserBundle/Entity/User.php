@@ -31,6 +31,7 @@ class User extends BaseUser
     public function __construct()
     {
         parent::__construct();
+        $this->organisations = new ArrayCollection();
     }
 
     /**
@@ -56,6 +57,10 @@ class User extends BaseUser
      */
     private $timezone;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Gingy\CoreBundle\Entity\Organisation", mappedBy="user")
+     **/
+    private $organisations;
 
     /**
      * Get id
