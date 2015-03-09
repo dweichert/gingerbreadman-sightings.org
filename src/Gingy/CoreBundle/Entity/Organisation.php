@@ -49,8 +49,8 @@ class Organisation
     private $latitude;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Gingy\UserBundle\Entity\User", inversedBy="organisation")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Gingy\UserBundle\Entity\User", inversedBy="organisations")
+     * @ORM\JoinColumn(name="user_organisation_id", referencedColumnName="id")
      **/
     private $organiser;
 

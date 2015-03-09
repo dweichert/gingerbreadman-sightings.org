@@ -59,7 +59,7 @@ class User extends BaseUser
     private $timezone;
 
     /**
-     * @ORM\OneToMany(targetEntity="Gingy\CoreBundle\Entity\Organisation", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="Gingy\CoreBundle\Entity\Organisation", mappedBy="organiser")
      **/
     private $organisations;
 
