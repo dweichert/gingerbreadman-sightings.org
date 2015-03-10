@@ -4,8 +4,53 @@
 
 {% block body %}
 
-<div class="page-header">
-    <h1>Add an Organisation</h1>
-</div>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Add an Organisation</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <form id="add-organisation">
+                <div class="form-group">
+                    <label for="org-name">Name</label>
+                    <input type="text" class="form-control" id="org-name"
+                           placeholder="Please enter your organisation's name">
+                </div>
+                <div class="form-group">
+                    <label for="org-country">Country</label>
+                    <select id="org-country" class="form-control">
+                        <option value="de">Germany</option>
+                        <option value="gb">England</option>
+                        <option value="us">United States of America</option>
+                        <option value="au">Australia</option>
+                        <option value="nz">New Zealand</option>
+                    </select>
+                </div>
+                <!-- @todo display map to pick location -->
+                <div class="form-group">
+                    <label for="org-lat">Latitude</label>
+                    <input type="number" class="form-control" id="org-lat">
+                </div>
+                <div class="form-group">
+                    <label for="org-long">Longitude</label>
+                    <input type="number" class="form-control" id="org-long">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-4 well well-lg">
+            <p>Here you can create an organisation for the group of children for who
+                you organise the Gingerbread Man project. It defines the community of
+                adults and children participating in your Gingerbread Man project.
+                The organisation can be a form in a school or pre-school, a group in
+                a nursery or play school, or simply just a group of parents who
+                organise the Gingerbread Man project for their children.</p>
+
+            <p>Your user account will be associated with the organisation and you will
+                be able to control all activities (e.g. posts of Gingerbread Man
+                sightings) relating to your organisation.</p>
+        </div>
+    </div>
 
 {% endblock %}
