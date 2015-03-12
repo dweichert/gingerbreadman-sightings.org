@@ -259,7 +259,7 @@ class Organisation
      * Set membersonly
      *
      * @param boolean $membersonly
-     * @return Foo
+     * @return Organisation
      */
     public function setMembersonly($membersonly)
     {
