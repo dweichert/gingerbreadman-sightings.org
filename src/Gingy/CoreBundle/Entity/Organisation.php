@@ -55,6 +55,13 @@ class Organisation
     private $organiser;
 
     /**
+     * @var boolean
+     *
+     * @ORM\Column(name="membersonly", type="boolean")
+     */
+    private $membersonly;
+
+    /**
      * Get id
      *
      * @return integer 
@@ -246,5 +253,28 @@ class Organisation
     public function getOrganiser()
     {
         return $this->organiser;
+    }
+
+    /**
+     * Set membersonly
+     *
+     * @param boolean $membersonly
+     * @return Foo
+     */
+    public function setMembersonly($membersonly)
+    {
+        $this->membersonly = $membersonly;
+
+        return $this;
+    }
+
+    /**
+     * Get membersonly
+     *
+     * @return boolean
+     */
+    public function getMembersonly()
+    {
+        return $this->membersonly;
     }
 }
