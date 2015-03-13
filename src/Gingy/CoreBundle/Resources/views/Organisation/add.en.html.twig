@@ -25,7 +25,8 @@
                            placeholder="Please enter your organisation's name">
                 </div>
                 <div class="form-group">
-                    <label for="map">Location</label>
+                    <label for="latlng">Location</label>
+                    <input type="hidden" id="latlng" value=""/>
                     <div id="map"></div>
                 </div>
                 <div class="form-group">
@@ -65,17 +66,41 @@
 <script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
 <script type="text/javascript">
 $( document ).ready(function() {
-    var map = L.map('map');
-    var osmUrl = 'http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png';
-    var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-    var osm = new L.TileLayer(osmUrl, {minZoom: 2, maxZoom: 18, attribution: osmAttrib});
-    map.setView(new L.LatLng(51.507, 0.128),5);
-    map.addLayer(osm);
-    var marker = L.marker(map.getCenter()).addTo(map);
-    map.on('click', function(e) {
-        marker.setLatLng(e.latlng);
-        $('#latlng').val(e.latlng.lat + "-" + e.latlng.lng);
-    });
+    var greenwich = { lat: 51.478, lng: -0.002 };
+    var options = {
+       enableHighAccuracy: false,
+       timeout: 5000,
+       maximumAge: 0
+    };
+    if('geolocation' in navigator) {
+        navigator.geolocation.getCurrentPosition(success, error, options);
+    } else {
+        renderMap(greenwich.lat, greenwich.lng);
+    }
+    function success(pos){
+        var lng = pos.coords.longitude,
+            lat = pos.coords.latitude;
+        renderMap(lat, lng);
+
+    }
+    function error(err){
+        renderMap(greenwich.lat, greenwich.lng);
+    }
+    function renderMap(lat, lng)
+    {
+        var map = L.map('map');
+        var osmUrl = 'http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png';
+        var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+        var osm = new L.TileLayer(osmUrl, {minZoom: 2, maxZoom: 18, attribution: osmAttrib});
+        map.setView(new L.LatLng(lat, lng),5);
+        map.addLayer(osm);
+        $('#latlng').val(lat + ':' + lng);
+        var marker = L.marker(map.getCenter()).addTo(map);
+        map.on('click', function(e) {
+            marker.setLatLng(e.latlng);
+            $('#latlng').val(e.latlng.lat + ':' + e.latlng.lng);
+        });
+    }
 });
 
 </script>
