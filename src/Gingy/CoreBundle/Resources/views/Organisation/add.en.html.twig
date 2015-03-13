@@ -1,5 +1,12 @@
 {% extends 'base.html.twig' %}
 
+{% block stylesheets %}
+<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+<style type="text/css">
+    #map { height: 300px; }
+</style>
+{% endblock %}
+
 {% block title %}Add an Organisation{% endblock %}
 
 {% block body %}
@@ -18,23 +25,8 @@
                            placeholder="Please enter your organisation's name">
                 </div>
                 <div class="form-group">
-                    <label for="org-country">Country</label>
-                    <select id="org-country" class="form-control">
-                        <option value="de">Germany</option>
-                        <option value="gb">England</option>
-                        <option value="us">United States of America</option>
-                        <option value="au">Australia</option>
-                        <option value="nz">New Zealand</option>
-                    </select>
-                </div>
-                <!-- @todo display map to pick location -->
-                <div class="form-group">
-                    <label for="org-lat">Latitude</label>
-                    <input type="number" class="form-control" id="org-lat">
-                </div>
-                <div class="form-group">
-                    <label for="org-long">Longitude</label>
-                    <input type="number" class="form-control" id="org-long">
+                    <label for="map">Location</label>
+                    <div id="map"></div>
                 </div>
                 <div class="form-group">
                     <div class="checkbox">
@@ -43,7 +35,7 @@
                         </label>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary">Create organisation</button>
             </form>
         </div>
         <div class="col-md-4 well well-lg">
@@ -61,11 +53,30 @@
                 <li>additional material relating to your project</li>
             </ul>
 
-
             <p>Your user account will be automatically associated with the organisation
                 and you will be able to control all activities (e.g. posts of Gingerbread Man
                 sightings) relating to your organisation.</p>
         </div>
     </div>
 
+{% endblock %}
+
+{% block javascripts %}
+<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+<script type="text/javascript">
+$( document ).ready(function() {
+    var map = L.map('map');
+    var osmUrl = 'http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png';
+    var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
+    var osm = new L.TileLayer(osmUrl, {minZoom: 2, maxZoom: 18, attribution: osmAttrib});
+    map.setView(new L.LatLng(51.507, 0.128),5);
+    map.addLayer(osm);
+    var marker = L.marker(map.getCenter()).addTo(map);
+    map.on('click', function(e) {
+        marker.setLatLng(e.latlng);
+        $('#latlng').val(e.latlng.lat + "-" + e.latlng.lng);
+    });
+});
+
+</script>
 {% endblock %}
