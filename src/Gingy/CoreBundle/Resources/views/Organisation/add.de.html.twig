@@ -4,25 +4,66 @@
 
 {% block body %}
 
-<div class="page-header">
-    <h1>Organisation hinzufügen</h1>
-    <!-- @todo translate to German -->
-    <p>Füge eine Organisation hinzu</p>
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Organisation hinzufügen</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-8">
+            <form id="add-organisation">
+                <div class="form-group">
+                    <label for="org-name">Name</label>
+                    <input type="text" class="form-control" id="org-name"
+                           placeholder="Please enter your organisation's name">
+                </div>
+                <div class="form-group">
+                    <label for="org-country">Country</label>
+                    <select id="org-country" class="form-control">
+                        <option value="de">Germany</option>
+                        <option value="gb">England</option>
+                        <option value="us">United States of America</option>
+                        <option value="au">Australia</option>
+                        <option value="nz">New Zealand</option>
+                    </select>
+                </div>
+                <!-- @todo display map to pick location -->
+                <div class="form-group">
+                    <label for="org-lat">Latitude</label>
+                    <input type="number" class="form-control" id="org-lat">
+                </div>
+                <div class="form-group">
+                    <label for="org-long">Longitude</label>
+                    <input type="number" class="form-control" id="org-long">
+                </div>
+                <div class="form-group">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox"> visible to members only
+                        </label>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <div class="col-md-4 well well-lg">
+            <p>Füge eine Organisation hinzu</p>
     
-    <p>Eine Organisation kann eine Schulklasse, eine Kindergarten-Gruppe,
-        oder einfach eine Gruppe von Eltern sein, die für ihre Kinder
-        das Gingerbread Man-Projekt organisieren.</p>
+            <p>Eine Organisation kann eine Schulklasse, eine Kindergarten-Gruppe,
+                oder einfach eine Gruppe von Eltern sein, die für ihre Kinder
+                das Gingerbread Man-Projekt organisieren.</p>
         
-    <p>Organisationen beinhalten</p>
-    <ul>
-        <li>Benutzer und Administratoren (Verwalter)</li>
-        <li>Einträge zu Sichtungen (Postkarten, etc.)</li>
-        <li>zusätzliche, auf das Projekt bezogene, Materialien</li>
-    </ul>
+            <p>Organisationen haben:</p>
+            <ul>
+                <li>Benutzer und Administratoren</li>
+                <li>Einträge zu Sichtungen des Gingerbread Mans</li>
+                <li>zusätzliche, auf das Projekt bezogene, Materialien</li>
+            </ul>
     
-    <p>Das Benutzerkonto wird automatisch mit der erstellten Organisation verbunden.
-        Alle Aktivitäten, welche die Organisation betreffen (z. B.Einträge zu Sichtungen)
-        sind anschließend möglich.</p>
-</div>
+            <p>Dein Benutzerkonto wird automatisch mit der erstellten Organisation verbunden.
+                Du kannst dann alle Aktivitäten, die die Organisation betreffen (z. B. Einträge zu Sichtungen),
+                administrieren.</p>
+        </div>
+    </div>
 
 {% endblock %}
