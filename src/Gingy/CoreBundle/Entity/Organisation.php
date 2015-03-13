@@ -30,6 +30,20 @@ class Organisation
     /**
      * @var string
      *
+     * @ORM\Column(name="name", type="string", length=256)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="description", type="text")
+     */
+    private $description;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="country", type="string", length=2)
      */
     private $country;
