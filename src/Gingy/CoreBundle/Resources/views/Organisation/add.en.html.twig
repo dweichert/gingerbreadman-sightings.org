@@ -79,24 +79,24 @@ $( document ).ready(function() {
     if('geolocation' in navigator) {
         navigator.geolocation.getCurrentPosition(success, error, options);
     } else {
-        renderMap(greenwich.lat, greenwich.lng);
+        renderMap(greenwich.lat, greenwich.lng, 5);
     }
     function success(pos){
         var lng = pos.coords.longitude,
             lat = pos.coords.latitude;
-        renderMap(lat, lng);
+        renderMap(lat, lng, 14);
 
     }
     function error(err){
-        renderMap(greenwich.lat, greenwich.lng);
+        renderMap(greenwich.lat, greenwich.lng, 5);
     }
-    function renderMap(lat, lng)
+    function renderMap(lat, lng, zoom)
     {
         var map = L.map('map');
         var osmUrl = 'http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png';
         var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
         var osm = new L.TileLayer(osmUrl, {minZoom: 2, maxZoom: 18, attribution: osmAttrib});
-        map.setView(new L.LatLng(lat, lng),5);
+        map.setView(new L.LatLng(lat, lng), zoom);
         map.addLayer(osm);
         $('#latlng').val(lat + ':' + lng);
         var marker = L.marker(map.getCenter()).addTo(map);
