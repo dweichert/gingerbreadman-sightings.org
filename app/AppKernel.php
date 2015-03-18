@@ -20,6 +20,7 @@ class AppKernel extends Kernel
             new Gingy\UserBundle\GingyUserBundle(),
             new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new Gingy\CoreBundle\GingyCoreBundle(),
+            new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -101,3 +101,10 @@ fos_user:
             validation_groups: [ ChangePasswordGingy, Default ]
     service:
         mailer: fos_user.mailer.twig_swift
+
+# Doctrine Migrations
+doctrine_migrations:
+    dir_name: %kernel.root_dir%/DoctrineMigrations
+    namespace: Application\Migrations
+    table_name: migration_versions
+    name: Application Migrations
