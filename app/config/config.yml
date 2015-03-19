@@ -118,4 +118,4 @@ sonata_block:
 
 sonata_admin:
     title: Gingy Admin
-    title_logo: bundles/gingycore/images/gingerbread-icon-32x32.png
+    title_logo: bundles/gingycore/images/gingerbread-icon-128x128.png
