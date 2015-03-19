@@ -24,7 +24,9 @@
         "knplabs/doctrine-behaviors": "~1.0",
         "guzzlehttp/guzzle": "~5.0",
         "doctrine/migrations": "1.0.*@dev",
-        "doctrine/doctrine-migrations-bundle": "2.1.*@dev"
+        "doctrine/doctrine-migrations-bundle": "2.1.*@dev",
+        "sonata-project/admin-bundle": "~2.3",
+        "sonata-project/doctrine-orm-admin-bundle": "~2.3"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
